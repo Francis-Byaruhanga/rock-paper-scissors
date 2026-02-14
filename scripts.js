@@ -59,3 +59,18 @@ for (let round = 1; round <= 5; round++) {
     const computerChoice = getComputerChoice();
     playRound(computerChoice, humanChoice);
 }
+
+// Announce Winner
+console.log("=== GAME OVER ===");
+console.log(`🏆 Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+
+if (humanScore > computerScore) {
+    console.log("🎉 Congratulations! You are the champion!")
+} else if (computerScore > humanScore) {
+    console.log("💻 The computer wins! Better luck next time!")
+} else {
+    console.log("🤝 It's a draw! Well played both!");
+}
+
+// Play the game
+playGame();
