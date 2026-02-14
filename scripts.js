@@ -15,6 +15,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     // Use prompt to get human choice
     const choice = prompt("Enter your choice (Rock, Paper or Scissors): ");
+    return choice;
 }
 
 // Create a play round function
@@ -26,23 +27,25 @@ function playGame() {
 
     // Re-define playRound inside playGame to access the local scores
         function playRound (computerChoice, humanChoice) {
-        // Convert human choice to lower case for case insensitive comparison
+        // Convert human choice and computer choice to lower case for case insensitive comparison
         const humanChoiceLower = humanChoice.toLowerCase();
+        const computerChoiceLower = computerChoice.toLowerCase();
 
         // Determine the winner
         if (computerChoice === humanChoice) {
             console.log(`It's a tie! Both chose ${humanChoiceLower}`);
         } else if (
-            (humanChoiceLower === "Rock" && computerChoice === "Scissors") ||
-            (humanChoiceLower === "Paper" && computerChoice === "Rock") ||
-            (humanChoiceLower === "Scissors" && computerChoice === "Paper")
+            (humanChoiceLower === "Rock" && computerChoiceLower === "Scissors") ||
+            (humanChoiceLower === "Paper" && computerChoiceLower === "Rock") ||
+            (humanChoiceLower === "Scissors" && computerChoiceLower === "Paper")
         ) {
             // Human wins
-            console.log(`Human Wins! ${humanChoiceLower} beats ${computerChoice}`);
+            console.log(`Human Wins! ${humanChoiceLower} beats ${computerChoiceLower}`);
             humanScore++;
         } else {
             // Computer wins
-            console.log(`You Lose! ${computerChoice} beats ${humanChoiceLower}`);
+            console.log(`The Computer Wins! ${computerChoiceLower} beats ${humanChoiceLower}`);
+            computerScore++;
         }
         console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}\n`);
     }
