@@ -17,3 +17,7 @@ function getHumanChoice() {
     const choice = prompt("Enter your choice (Rock, Paper or Scissors): ");
     return choice;
 }
+
+// Initialise global score variables
+let computerScore = 0;
+let humanScore = 0;
