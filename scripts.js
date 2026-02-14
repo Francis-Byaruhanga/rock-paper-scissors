@@ -15,7 +15,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     // Use prompt to get human choice
     const choice = prompt("Enter your choice (Rock, Paper or Scissors): ");
-    return choice;
 }
 
 // Create a play round function
@@ -47,29 +46,29 @@ function playGame() {
         }
         console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}\n`);
     }
-}
 
-// Play five rounds
-console.log("🎮 Welcome to Rock Paper Scissors! 🎮");
-console.log("Best of 5 rounds - Let's begin!\n");
+    // Play five rounds
+    console.log("🎮 Welcome to Rock Paper Scissors! 🎮");
+    console.log("Best of 5 rounds - Let's begin!\n");
 
-for (let round = 1; round <= 5; round++) {
-    console.log(`--- Round ${round} ---`);
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(computerChoice, humanChoice);
-}
+    for (let round = 1; round <= 5; round++) {
+        console.log(`--- Round ${round} ---`);
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(computerChoice, humanChoice);
+    }
 
-// Announce Winner
-console.log("=== GAME OVER ===");
-console.log(`🏆 Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+    // Announce Winner
+    console.log("=== GAME OVER ===");
+    console.log(`🏆 Final Score - You: ${humanScore}, Computer: ${computerScore}`);
 
-if (humanScore > computerScore) {
-    console.log("🎉 Congratulations! You are the champion!")
-} else if (computerScore > humanScore) {
-    console.log("💻 The computer wins! Better luck next time!")
-} else {
-    console.log("🤝 It's a draw! Well played both!");
+    if (humanScore > computerScore) {
+        console.log("🎉 Congratulations! You are the champion!")
+    } else if (computerScore > humanScore) {
+        console.log("💻 The computer wins! Better luck next time!")
+    } else {
+        console.log("🤝 It's a draw! Well played both!");
+    }
 }
 
 // Play the game
