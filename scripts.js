@@ -18,28 +18,44 @@ function getHumanChoice() {
     return choice;
 }
 
-// Initialize global score variables
-let computerScore = 0;
-let humanScore = 0;
-
 // Create a play round function
-function playRound (computerChoice, humanChoice) {
-    // Convert human choice to lower case for case insensitive comparison
-    const humanChoiceLower = humanChoice.toLowerCase();
 
-    // Determine the winner
-    if (computerChoice === humanChoice) {
-        console.log(`It's a tie! Both chose ${humanChoiceLower}`);
-    } else if (
-        (humanChoiceLower === "Rock" && computerChoice === "Scissors") ||
-        (humanChoiceLower === "Paper" && computerChoice === "Rock") ||
-        (humanChoiceLower === "Scissors" && computerChoice === "Paper")
-    ) {
-        // Human wins
-        console.log(`Human Wins! ${humanChoiceLower} beats ${computerChoice}`);
-        humanScore++;
-    } else {
-        // Computer wins
-        console.log(`You Lose! ${computerChoice} beats ${humanChoiceLower}`);
+function playGame() {
+    // Move scores into playGame function
+    let computerScore = 0;
+    let humanScore = 0;
+
+    // Re-define playRound inside playGame to access the local scores
+        function playRound (computerChoice, humanChoice) {
+        // Convert human choice to lower case for case insensitive comparison
+        const humanChoiceLower = humanChoice.toLowerCase();
+
+        // Determine the winner
+        if (computerChoice === humanChoice) {
+            console.log(`It's a tie! Both chose ${humanChoiceLower}`);
+        } else if (
+            (humanChoiceLower === "Rock" && computerChoice === "Scissors") ||
+            (humanChoiceLower === "Paper" && computerChoice === "Rock") ||
+            (humanChoiceLower === "Scissors" && computerChoice === "Paper")
+        ) {
+            // Human wins
+            console.log(`Human Wins! ${humanChoiceLower} beats ${computerChoice}`);
+            humanScore++;
+        } else {
+            // Computer wins
+            console.log(`You Lose! ${computerChoice} beats ${humanChoiceLower}`);
+        }
+        console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}\n`);
     }
+}
+
+// Play five rounds
+console.log("🎮 Welcome to Rock Paper Scissors! 🎮");
+console.log("Best of 5 rounds - Let's begin!\n");
+
+for (let round = 1; round <= 5; round++) {
+    console.log(`--- Round ${round} ---`);
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    playRound(computerChoice, humanChoice);
 }
