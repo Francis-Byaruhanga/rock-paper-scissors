@@ -18,6 +18,28 @@ function getHumanChoice() {
     return choice;
 }
 
-// Initialise global score variables
+// Initialize global score variables
 let computerScore = 0;
 let humanScore = 0;
+
+// Create a play round function
+function playRound (computerChoice, humanChoice) {
+    // Convert human choice to lower case for case insensitive comparison
+    const humanChoiceLower = humanChoice.toLowerCase();
+
+    // Determine the winner
+    if (computerChoice === humanChoice) {
+        console.log(`It's a tie! Both chose ${humanChoiceLower}`);
+    } else if (
+        (humanChoiceLower === "Rock" && computerChoice === "Scissors") ||
+        (humanChoiceLower === "Paper" && computerChoice === "Rock") ||
+        (humanChoiceLower === "Scissors" && computerChoice === "Paper")
+    ) {
+        // Human wins
+        console.log(`Human Wins! ${humanChoiceLower} beats ${computerChoice}`);
+        humanScore++;
+    } else {
+        // Computer wins
+        console.log(`You Lose! ${computerChoice} beats ${humanChoiceLower}`);
+    }
+}
