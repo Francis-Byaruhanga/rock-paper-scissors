@@ -359,3 +359,86 @@ body {
   color: var(--text-dim);
   pointer-events: none;
 }
+
+/* ── Round Log ───────────────────────────────────────────────── */
+.log-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+ 
+.log-title {
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+ 
+.round-log {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+ 
+.round-log::-webkit-scrollbar { width: 4px; }
+.round-log::-webkit-scrollbar-track { background: transparent; }
+.round-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+ 
+.log-placeholder {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 1rem;
+}
+ 
+.log-entry {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.72rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slide-in 0.25s ease;
+  flex-wrap: wrap;
+}
+ 
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.log-entry.win  { border-left-color: var(--neon-green);  }
+.log-entry.lose { border-left-color: var(--neon-pink);   }
+.log-entry.tie  { border-left-color: var(--neon-yellow); }
+ 
+.log-entry .log-round {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+ 
+.log-entry .log-desc { flex: 1; }
+ 
+.log-entry .log-result {
+  font-size: 0.65rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+ 
+.log-entry.win  .log-result { color: var(--neon-green);  }
+.log-entry.lose .log-result { color: var(--neon-pink);   }
+.log-entry.tie  .log-result { color: var(--neon-yellow); }
+ 
