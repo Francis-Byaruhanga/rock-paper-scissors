@@ -42,3 +42,12 @@ function evaluateRound(humanChoice, computerChoice) {
         message: `CPU wins! ${computerChoice} beats ${humanChoice}.`,
     };
 }
+
+// ---- 2. STATE ----------------------------------
+
+let state = {
+    humanScore:    0,
+    computerScore: 0,
+    roundNumber:   0,
+    gameOver:      false,
+};
