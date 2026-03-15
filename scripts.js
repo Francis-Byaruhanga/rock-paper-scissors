@@ -234,3 +234,14 @@ function startNewGame() {
   resetState();
   resetUI();
 }
+
+/* ── 5. EVENT WIRING ─────────────────────────────────────────── */
+ 
+ui.choiceButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const choice = btn.dataset.choice; // "Rock" | "Paper" | "Scissors"
+    playRound(choice);
+  });
+});
+ 
+ui.resetBtn.addEventListener("click", startNewGame);
