@@ -77,3 +77,34 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
+
+/* ── Header ──────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  padding-top: 1rem;
+}
+ 
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(0.55rem, 2.2vw, 0.9rem);
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+ 
+.title-rock     { color: var(--neon-cyan);   text-shadow: var(--glow-cyan); }
+.title-paper    { color: var(--neon-yellow);  text-shadow: var(--glow-yellow); }
+.title-scissors { color: var(--neon-pink);   text-shadow: var(--glow-pink); }
+.title-sep      { color: var(--text-dim); }
+ 
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
