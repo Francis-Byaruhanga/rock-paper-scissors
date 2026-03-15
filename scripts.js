@@ -61,3 +61,26 @@ function resetState() {
     };
 }
 
+
+/* ── 3. UI LAYER (DOM reads / writes only) ────────────────────── */
+ 
+// Cache DOM references once
+
+const ui = {
+    humanScore: document.getElementById("human-score"),
+    computerScore:    document.getElementById("computer-score"),
+    playerEmoji:      document.getElementById("player-emoji"),
+    computerEmoji:    document.getElementById("computer-emoji"),
+    playerDisplay:    document.getElementById("player-choice-display"),
+    computerDisplay:  document.getElementById("computer-choice-display"),
+    clashIcon:        document.getElementById("clash-icon"),
+    resultBanner:     document.getElementById("result-banner"),
+    resultText:       document.getElementById("result-text"),
+    roundLog:         document.getElementById("round-log"),
+    gameOverlay:      document.getElementById("game-overlay"),
+    overlayTrophy:    document.getElementById("overlay-trophy"),
+    overlayTitle:     document.getElementById("overlay-title"),
+    overlayScore:     document.getElementById("overlay-score"),
+    resetBtn:         document.getElementById("reset-btn"),
+    choiceButtons:    document.querySelectorAll(".choice-btn"),
+}
