@@ -293,3 +293,69 @@ body {
 .result-banner.win  p { color: var(--neon-green);  }
 .result-banner.lose p { color: var(--neon-pink);   }
 .result-banner.tie  p { color: var(--neon-yellow); }
+
+/* ── Controls ────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+ 
+.choice-btn {
+  flex: 1;
+  max-width: 180px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+  font-family: var(--font-display);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition), background var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.choice-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), transparent 60%);
+  pointer-events: none;
+}
+ 
+.choice-btn:hover {
+  background: var(--surface-2);
+  transform: translateY(-3px);
+}
+ 
+#btn-rock:hover     { border-color: var(--neon-cyan);   box-shadow: var(--glow-cyan);   }
+#btn-paper:hover    { border-color: var(--neon-yellow); box-shadow: var(--glow-yellow); }
+#btn-scissors:hover { border-color: var(--neon-pink);   box-shadow: var(--glow-pink);   }
+ 
+.choice-btn:active { transform: translateY(0) scale(0.97); }
+ 
+.choice-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+ 
+.btn-emoji {
+  font-size: 2.2rem;
+  display: block;
+  pointer-events: none;
+}
+ 
+.btn-label {
+  font-size: 0.45rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  pointer-events: none;
+}
