@@ -441,4 +441,86 @@ body {
 .log-entry.win  .log-result { color: var(--neon-green);  }
 .log-entry.lose .log-result { color: var(--neon-pink);   }
 .log-entry.tie  .log-result { color: var(--neon-yellow); }
+
+
+/* ── Game Over Overlay ────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.88);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fade-in 0.3s ease;
+}
  
+.overlay[hidden] { display: none; }
+ 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+ 
+.overlay-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 340px;
+  width: 100%;
+  animation: card-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+ 
+@keyframes card-in {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+ 
+.overlay-trophy { font-size: 3.5rem; line-height: 1; }
+ 
+.overlay-title {
+  font-family: var(--font-display);
+  font-size: clamp(0.7rem, 3vw, 1.1rem);
+  letter-spacing: 0.08em;
+}
+ 
+.overlay-title.win  { color: var(--neon-green);  text-shadow: var(--glow-green);  }
+.overlay-title.lose { color: var(--neon-pink);   text-shadow: var(--glow-pink);   }
+.overlay-title.tie  { color: var(--neon-yellow); text-shadow: var(--glow-yellow); }
+ 
+.overlay-score {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+}
+ 
+.reset-btn {
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+ 
+.reset-btn:hover {
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-2px);
+}
+ 
+.reset-btn:active { transform: translateY(0); }
