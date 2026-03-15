@@ -153,3 +153,27 @@ function setButtonDisabled(disabled) {
     ui.choiceButtons.forEach((btn) => (btn.disabled = disabled));
 }
 
+function showGameOver(winner) {
+    let trophy, title, titleClass;
+
+    if (winner === "human") {
+        trophy      = "🏆";
+        title       = "YOU WIN!";
+        titleClass  = "win";
+    } else if (winner === "computer") {
+        trophy      = "💻";
+        title       = "CPU WINS!";
+        titleClass  = "lose";
+    } else {
+        trophy      = "🤝";
+        title       = "IT'S A DRAW";
+        titleClass  = "tie";
+    }
+
+    ui.overlayTrophy.textContent    = trophy;
+    ui.overlayTitle.textContent     = title;
+    ui.overlayTitle.className       = `overlay-title ${titleClass}`;
+    ui.overlayScore.textContent  = `${state.humanScore} – ${state.computerScore}`;
+    ui.gameOverlay.hidden = false;
+
+}
