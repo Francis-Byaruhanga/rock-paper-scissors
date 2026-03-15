@@ -68,3 +68,12 @@ body {
     rgba(0, 0, 0, 0.18) 4px
   );
 }
+
+/* ── Layout Container ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
