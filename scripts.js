@@ -124,3 +124,8 @@ function animateReveal(displayEl) {
     displayEl.classList.add("reveal");
 }
 
+function showResult(outcome, message) {
+    ui.resultBanner.className = "result-banner" + outcome;
+    ui.resultText.textContent = message;
+}
+
