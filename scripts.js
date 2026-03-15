@@ -117,3 +117,10 @@ function showChoices(humanChoice, computerChoice) {
     void ui.clashIcon.offsetWidth;
     ui.clashIcon.classList.add("active");
 }
+
+function animateReveal(displayEl) {
+    displayEl.classList.remove("reveal");
+    void displayEl.offsetWidth;
+    displayEl.classList.add("reveal");
+}
+
