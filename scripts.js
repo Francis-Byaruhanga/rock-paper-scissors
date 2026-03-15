@@ -94,3 +94,11 @@ function updateScoreboard() {
     ui.computerScore.textContent = state.computerScore;
     triggerBump(ui.computerScore);
 }
+
+function triggerBump(el) {
+    el.classList.remove("score-bump");
+
+    // Fore reflow so animation restarts
+    void el.offsetWidth;
+    el.classList.add("score-bump");
+}
