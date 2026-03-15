@@ -1,0 +1,32 @@
+/* ============================================================
+   ROCK PAPER SCISSORS — style.css
+   Aesthetic: Retro arcade / CRT terminal
+   Fonts: Press Start 2P (display) + DM Mono (body)
+   ============================================================ */
+ 
+/* ── Custom Properties ──────────────────────────────────────── */
+:root {
+  --bg:           #0a0a12;
+  --surface:      #12121e;
+  --surface-2:    #1c1c2e;
+  --border:       #2e2e4a;
+ 
+  --neon-cyan:    #00e5ff;
+  --neon-pink:    #ff2d78;
+  --neon-yellow:  #ffe600;
+  --neon-green:   #39ff14;
+ 
+  --text-primary: #e8e8f0;
+  --text-dim:     #6666a0;
+ 
+  --font-display: "Press Start 2P", monospace;
+  --font-body:    "DM Mono", monospace;
+ 
+  --radius:       4px;
+  --glow-cyan:    0 0 12px #00e5ff88, 0 0 24px #00e5ff44;
+  --glow-pink:    0 0 12px #ff2d7888, 0 0 24px #ff2d7844;
+  --glow-yellow:  0 0 12px #ffe60088, 0 0 24px #ffe60044;
+  --glow-green:   0 0 10px #39ff1466;
+ 
+  --transition:   150ms ease;
+}
