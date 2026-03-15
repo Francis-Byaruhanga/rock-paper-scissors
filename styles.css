@@ -524,3 +524,15 @@ body {
 }
  
 .reset-btn:active { transform: translateY(0); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .controls { gap: 0.6rem; }
+  .choice-btn { padding: 0.75rem 0.25rem; }
+  .btn-emoji { font-size: 1.8rem; }
+  .score-value { font-size: 2.2rem; }
+  .choice-display { font-size: 2.8rem; }
+  .arena { gap: 0.75rem; }
+  .overlay-card { padding: 2rem 1.5rem; }
+}
+ 
