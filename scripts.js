@@ -129,3 +129,19 @@ function showResult(outcome, message) {
     ui.resultText.textContent = message;
 }
 
+function addLogEntry(round, outcome, humanChoice, computerChoice) {
+    // Remove placeholder if present 
+    const placeholder = ui.roundLog.querySelector(".log-placeholder");
+    if (placeholder) placeholder.remove();
+
+    const li = document.createElement("li");
+    li.className = `log-entry ${outcome}`;
+
+    const resultLabel = outcome === "win" ? "win" : outcome === "lose" ? "LOSE" : "TIE";
+
+    li.innerHTML = `
+    <span class="log-round">R${round}</span>
+    <span class="log-desc">${EMOJIS[humanChoice]} vs ${EMOJIS[computerChoice]}</span>
+    <span class="log-result">${resultLabel}</span>
+    `;
+}
