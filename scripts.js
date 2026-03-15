@@ -144,4 +144,12 @@ function addLogEntry(round, outcome, humanChoice, computerChoice) {
     <span class="log-desc">${EMOJIS[humanChoice]} vs ${EMOJIS[computerChoice]}</span>
     <span class="log-result">${resultLabel}</span>
     `;
+
+    // Prepend so newest is at the top
+    ui.roundLog.prepend(li);
 }
+
+function setButtonDisabled(disabled) {
+    ui.choiceButtons.forEach((btn) => (btn.disabled = disabled));
+}
+
