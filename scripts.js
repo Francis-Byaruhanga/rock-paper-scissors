@@ -177,3 +177,23 @@ function showGameOver(winner) {
     ui.gameOverlay.hidden = false;
 
 }
+
+function resetUI() {
+    ui.humanScore.textContent    = "0";
+    ui.computerScore.textContent = "0";
+    ui.playerEmoji.textContent   = "❓";
+    ui.computerEmoji.textContent = "❓";
+
+    ui.resultBanner.className = "result-banner";
+    ui.resultText.textContent = "Choose your weapon!";
+
+    ui.clashIcon.classList.remove("active");
+    ui.playerDisplay.classList.remove("reveal");
+    ui.computerDisplay.classList.remove("reveal");
+
+    // Clear log
+    ui.roundLog.innerHTML = '<li class="log-placeholder">No rounds played yet…</li>';
+
+    ui.gameOverlay.hidden = true;
+    setButtonsDisabled(false);
+}
