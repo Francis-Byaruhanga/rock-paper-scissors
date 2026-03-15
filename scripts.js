@@ -83,4 +83,14 @@ const ui = {
     overlayScore:     document.getElementById("overlay-score"),
     resetBtn:         document.getElementById("reset-btn"),
     choiceButtons:    document.querySelectorAll(".choice-btn"),
+};
+
+function updateScoreboard() {
+    // Human Score
+    ui.humanScore.textContent = state.humanScore;
+    triggerBump(ui.humanScore);
+
+    // Computer score
+    ui.computerScore.textContent = state.computerScore;
+    triggerBump(ui.computerScore);
 }
