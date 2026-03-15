@@ -195,7 +195,7 @@ function resetUI() {
     ui.roundLog.innerHTML = '<li class="log-placeholder">No rounds played yet…</li>';
 
     ui.gameOverlay.hidden = true;
-    setButtonsDisabled(false);
+    setButtonDisabled(false);
 }
 
 /* ── 4. ORCHESTRATION (ties logic + UI together) ─────────────── */
@@ -220,7 +220,7 @@ function playRound(humanChoice) {
   // Check win condition
   if (state.humanScore >= WIN_SCORE || state.computerScore >= WIN_SCORE) {
     state.gameOver = true;
-    setButtonsDisabled(true);
+    setButtonDisabled(true);
  
     const winner =
       state.humanScore >= WIN_SCORE ? "human" : "computer";
