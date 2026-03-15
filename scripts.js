@@ -24,7 +24,7 @@ function getComputerChoice() {
  */
 
 function evaluateRound(humanChoice, computerChoice) {
-    if (humanChoice === getComputerChoice) {
+    if (humanChoice === computerChoice) {
         return {
             outcome: "tie",
             message: `It's a tie! Both chose ${humanChoice}`,
