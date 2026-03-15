@@ -51,3 +51,13 @@ let state = {
     roundNumber:   0,
     gameOver:      false,
 };
+
+function resetState() {
+    state = {
+        humanScore:    0,
+        computerScore: 0,
+        roundNumber:   0,
+        gameOver:      false,
+    };
+}
+
