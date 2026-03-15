@@ -102,3 +102,18 @@ function triggerBump(el) {
     void el.offsetWidth;
     el.classList.add("score-bump");
 }
+
+function showChoices(humanChoice, computerChoice) {
+    // Player side
+    ui.playerEmoji.textContent = EMOJIS[humanChoice];
+    animateReveal(ui.playerDisplay);
+
+    // Computer side
+    ui.computerEmoji.textContent = EMOJIS[computerChoice];
+    animateReveal(ui.computerDisplay);
+
+    // Clash Icon
+    ui.clashIcon.classList.remove("active");
+    void ui.clashIcon.offsetWidth;
+    ui.clashIcon.classList.add("active");
+}
