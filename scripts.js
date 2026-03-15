@@ -197,3 +197,40 @@ function resetUI() {
     ui.gameOverlay.hidden = true;
     setButtonsDisabled(false);
 }
+
+/* ── 4. ORCHESTRATION (ties logic + UI together) ─────────────── */
+ 
+function playRound(humanChoice) {
+  if (state.gameOver) return;
+ 
+  const computerChoice = getComputerChoice();
+  const { outcome, message } = evaluateRound(humanChoice, computerChoice);
+ 
+  state.roundNumber++;
+ 
+  if (outcome === "win")  state.humanScore++;
+  if (outcome === "lose") state.computerScore++;
+ 
+  // Update UI
+  showChoices(humanChoice, computerChoice);
+  showResult(outcome, message);
+  updateScoreboard();
+  addLogEntry(state.roundNumber, outcome, humanChoice, computerChoice);
+ 
+  // Check win condition
+  if (state.humanScore >= WIN_SCORE || state.computerScore >= WIN_SCORE) {
+    state.gameOver = true;
+    setButtonsDisabled(true);
+ 
+    const winner =
+      state.humanScore >= WIN_SCORE ? "human" : "computer";
+ 
+    // Small delay so player sees the last result before the overlay
+    setTimeout(() => showGameOver(winner), 800);
+  }
+}
+ 
+function startNewGame() {
+  resetState();
+  resetUI();
+}
