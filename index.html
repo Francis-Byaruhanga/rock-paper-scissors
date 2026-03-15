@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
    <div class="scanlines"></div>
@@ -80,6 +80,22 @@
             </button>
         </section>
 
+        <!-- Round Log -->
+        <section class="log-section">
+            <h2 class="log-title">Round Log</h2>
+            <ul class="round-log" id="round-log" aria-live="polite" aria-label="Round history">
+                <li class="log-placeholder">No rounds played yet…</li>
+            </ul>
+        </section>
    </main>
+    <!-- Game Over overlay -->
+    <div class="overlay" id="game-overlay" aria-modal="true" role="dialog" aria-label="Game over" hidden>
+        <div class="overlay-card">
+            <div class="overlay-trophy" id="overlay-trophy">🏆</div>
+            <h2 class="overlay-title" id="overlay-title">YOU WIN!</h2>
+            <p class="overlay-score" id="overlay-score">5 – 2</p>
+            <button class="reset-btn" id="reset-btn">PLAY AGAIN</button>
+        </div>
+    </div>
 </body>
 </html>
